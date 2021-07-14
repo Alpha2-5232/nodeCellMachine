@@ -1,6 +1,6 @@
-const dotenv  = require('dotenv')
-dotenv.config()
-var http = require('http')
+const dotenv  = require('dotenv');
+dotenv.config();
+var http = require('http');
 var server = http.createServer(function (req, res) {   // 2 - creating server
 
     //handle incomming requests here..
