@@ -2,7 +2,7 @@
   "name": "nodecellmachine",
   "version": "0.1.0",
   "description": "README.md",
-  "main": "index.js",
+  "main": "server.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
@@ -12,8 +12,7 @@
   },
   "keywords": [
     "node",
-    "cell",
-    "machine",
+    "cell machine",
     "git"
   ],
   "author": "Alpha2-5232",
