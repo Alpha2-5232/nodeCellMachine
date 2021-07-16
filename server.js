@@ -1,12 +1,30 @@
-const dotenv  = require('dotenv');
+const dotenv = require("dotenv");
 dotenv.config();
-var http = require('http');
-var server = http.createServer(function (req, res) {   // 2 - creating server
+var express = require("express");
+var http = require("http");
+var path = require("path");
+var socketIO = require("socket.io");
 
-    //handle incomming requests here..
+var app = express();
+var server = http.Server(app);
+var io = socketIO(server);
 
+app.set("port", process.env.port);
+app.use("/static", express.static(__dirname + "/static"));
+
+// Routing
+app.get("/", function (request, response) {
+    response.sendFile(path.join(__dirname + "/static/index.html"));
 });
 
-server.listen(process.env.PORT); //3 - listen for any incoming requests
+// Starts the server.
+server.listen(process.env.port, function () {
+    console.log("Starting server on port " + process.env.port);
+});
 
-console.log('Node.js web server at port ${process.env.PORT} is running..')
+// Add the WebSocket handlers
+io.on("connection", function (socket) {});
+
+setInterval(function () {
+    io.sockets.emit("message", "hi!");
+}, 1000);
