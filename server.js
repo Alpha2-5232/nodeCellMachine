@@ -5,6 +5,8 @@ var http = require("http");
 var path = require("path");
 var socketIO = require("socket.io");
 
+
+
 var app = express();
 var server = http.Server(app);
 var io = socketIO(server);
@@ -28,3 +30,10 @@ io.on("connection", function (socket) {});
 setInterval(function () {
     io.sockets.emit("message", "hi!");
 }, 1000);
+
+
+var secret = require("./secret.json")
+if (secret.public == "") {
+
+}
+
