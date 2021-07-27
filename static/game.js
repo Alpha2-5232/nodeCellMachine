@@ -1,6 +1,7 @@
 var socket = io();
 var sysmes = false;
 socket.on("message", function (data) {
+	console.log(data)
 	if (!sysmes) return;
     let currentDate = new Date();
     let time =
