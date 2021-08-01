@@ -34,6 +34,6 @@ setInterval(function () {
 
 var secret = require("./secret.json")
 if (secret.public == "") {
-
+	
 }
 
